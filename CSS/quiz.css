@@ -1,0 +1,164 @@
+ body {
+    font-family: 'Georgia', serif;
+    background-image: url('Imagens/quiz/4.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    color: #4a3e2a;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 239, 180, 0.5); /* camada dourada suave por cima */
+    z-index: -1;
+    mix-blend-mode: multiply;
+  }
+
+  #quiz {
+    background-color: rgba(255, 250, 215, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 20px rgba(108, 85, 50, 0.2);
+    max-width: 550px;
+    width: 90%;
+    border: 2px solid #e0c170;
+  }
+
+  h1 {
+    text-align: center;
+    color: #7a5c1c;
+    font-family: 'Georgia', serif;
+    font-size: 1.7rem;
+    text-shadow: 0 1px 1px #f7e9a0;
+  }
+
+  #question {
+    font-size: 1.3rem;
+    margin: 20px 0;
+  }
+
+  #options {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  button {
+    padding: 12px;
+    background-color: #f1c85f;
+    color: #4a3e2a;
+    border: 1px solid #d4a838;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(122, 92, 28, 0.2);
+  }
+
+  button:hover {
+    background-color: #ffdd75;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(122, 92, 28, 0.3);
+  }
+
+  button.selected {
+    background-color: #b4e07c;
+    border-color: #7faa4a;
+  }
+
+  #submit {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffe066;
+    border: 2px solid #e6b800;
+  }
+
+  #submit:hover {
+    background-color: #f9d347;
+  }
+
+  #PlayBtn {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1100;
+    background-color: rgba(255, 229, 80, 0.9);
+    border: 2px solid #d8af00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 229, 80, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  #PlayBtn:hover {
+    background-color: rgba(255, 243, 150, 0.9);
+    box-shadow: 0 0 15px #fffccc, 0 0 25px #ffd900;
+    transform: scale(1.1);
+  }
+
+  #PlayBtn i {
+    color: #6b5410;
+    font-size: 1.4rem;
+  }
+
+  header {
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 245, 191, 0.6);
+    box-shadow: 0 4px 20px rgba(255, 217, 89, 0.4);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ffd933;
+    backdrop-filter: blur(4px);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 40;
+  }
+
+  nav ul li a {
+    color: #a87416;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    text-shadow:
+      0 0 5px #ffeaaa,
+      0 0 10px #ffd966;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #a08605;
+    text-shadow:
+      0 0 8px #f1de32,
+      0 0 20px #fffccd;
+    cursor: pointer;
+  }

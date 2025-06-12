@@ -1,0 +1,216 @@
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: auto;
+  background-image: url(https://assets.codepen.io/4927073/Group2.png), url(https://assets.codepen.io/4927073/Background6.png);
+  background-image: url(https://assets.codepen.io/4927073/Group2.png), linear-gradient(33deg, #edf2f7, #edf2f7);
+  background-image: url(https://assets.codepen.io/4927073/Group2.png),  linear-gradient(33deg, #2c303a, #2c303a);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.envelope {
+  content: url(https://assets.codepen.io/4927073/Envelope3.png);
+  width: 645px; /* aumentado de 430px */
+  position: absolute;
+  left: 12%; /* ajustado para melhor centralização */
+  top: 2%;
+  filter: drop-shadow(2.25px 1.125px 2.625px #4d4d4d);
+}
+
+.card {
+  position: relative;
+  width: 393px; /* aumentado de 262px */
+  height: 558px; /* aumentado de 372px */
+  margin: auto;
+  box-shadow: inset 7.5px 0px 22.5px 0px rgba(0, 0, 0, 0.1),
+              4.5px 0px 4.5px -3px rgba(0, 0, 0, 0.3);
+  background: url("Imagens/o\ que\ eu\ quero/2.png");
+  background-size: cover;
+  left: 18px; /* pequeno ajuste */
+  
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -15px 0px 0px -15px; /* aumentado de -10px */
+  margin: auto;
+  border: 1.5px solid #702b10; /* mais grosso */
+  backface-visibility: hidden;
+  background-color: #702b10;
+  background-size: contain;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 1s ease-in-out;
+  filter: saturate(1.125) brightness(1.0125);
+}
+
+.card:hover .front {
+  transform: perspective(800px) rotateY(-170deg);
+  background-color: rgb(94, 25, 25);
+}
+
+.card:hover .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background: url("Imagens/o\ que\ eu\ quero/1.png");
+  background-size: cover;
+  background-color: rgb(57, 86, 248);
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -15px 0px 0px -15px; /* aumentado de -10px */
+  margin: auto;
+  backface-visibility: visible;
+  filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.25)); /* aumentado */
+  box-shadow: inset 7.5px 0px 22.5px 0px rgba(0, 0, 0, 0.1),
+    4.5px 0px 4.5px 1.5px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 1s ease-in-out;
+  background: url("Imagens/o\ que\ eu\ quero/");
+}
+
+.text-container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  color: hsl(0, 0%, 0%); /* amarelo mais vibrante */
+  font-size: 0.9rem;
+  text-shadow: 1.5px 1.5px 3px rgba(255, 255, 255, 0.7); /* sombra para facilitar a leitura */
+}
+
+
+.f-box {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: transparent;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.f-box img {
+  margin-top: 0px;
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 675px) {
+  .envelope {
+    width: 570px; /* aumentado de 380px */
+    left: 10%;
+  }
+  
+  .card {
+    height: 495px; /* aumentado de 330px */
+    width: 345px; /* aumentado de 230px */
+  }
+}
+
+header {
+  background-color: rgba(20, 20, 20, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ffffff;
+  backdrop-filter: blur(6px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 30;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px #ddddaa;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #ffdd55;
+  text-shadow:
+      0 0 6px #ffdd55,
+      0 0 14px #444;
+  cursor: pointer;
+}
+
+#PlayBtn {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1100;
+  background-color: #ffffff;
+  border: 2px solid #b6b6b5;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 252, 252, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#PlayBtn:hover {
+  background-color: rgba(255, 241, 150, 0.9);
+  box-shadow: 0 0 15px #fffccc, 0 0 25px #ffffff;
+  transform: scale(1.1);
+}
+
+#PlayBtn i {
+  color: rgba(11, 26, 77, 0.7);
+  font-size: 1.4rem;
+}
+
+.front::before,
+.back::before, {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* camada escura */
+  pointer-events: none; /* não interfere nos cliques */
+  z-index: 1;
+  border-radius: inherit; /* mantém as bordas do card */
+}
+
+.front > * ,
+.back > * {
+  position: relative;
+  z-index: 2; /* conteúdo acima da camada escura */
+}

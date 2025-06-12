@@ -1,0 +1,284 @@
+    svg #line {
+        fill: none;
+        stroke: #e00000;
+        stroke-width: 1.5;
+        stroke-linecap: butt;
+        stroke-linejoin: round;
+        stroke-miterlimit: 4;
+
+        stroke-opacity: 1;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        animation: dash 6s linear forwards;
+    }
+    svg #point {
+        fill: none;
+        stroke: #f00000;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: .1;
+        stroke-opacity: 1;
+        stroke-dasharray: .0001, .9999;
+        stroke-dashoffset: 1;
+        animation: dash 6s linear forwards;
+    }
+
+    @keyframes dash {
+        0% {
+            stroke-dashoffset: 1;
+        }
+        80% {
+            stroke-dashoffset: 0;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('Imagens/Index/Background.gif'); /* nome da imagem */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* camada escura pra contraste */
+      z-index: -1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20vh;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    
+    #PlayBtn {
+        position: fixed;
+        top: 90px;
+        right: 20px;
+        z-index: 1100;
+        background-color: rgba(255, 221, 85, 0.8);
+        border: 2px solid #ffdd55;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(255, 221, 85, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    #PlayBtn:hover {
+        background-color: rgba(255, 241, 150, 0.9);
+        box-shadow: 0 0 15px #fffccc, 0 0 25px #ffdd55;
+        transform: scale(1.1);
+    }
+
+    #PlayBtn i {
+        color: rgba(11, 26, 77, 0.7);
+        font-size: 1.4rem;
+    }
+
+
+    header {
+        background-image: url('Imagens/index/header.webp'); /* imagem que você vai usar */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: overlay;
+        background-color: rgba(11, 26, 77, 0.7); /* azul escuro com transparência */
+        box-shadow: 0 4px 20px rgba(255, 223, 93, 0.4);
+        padding: 15px 30px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 2px solid #ffdd55;
+        backdrop-filter: blur(4px);
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        color: #ffdd55;
+        text-decoration: none;
+        font-weight: 600;
+        font-family: 'Georgia', serif;
+        font-size: 1.1rem;
+        text-shadow:
+            0 0 5px #ffdd55,
+            0 0 10px #ffd966;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+        color: #fff;
+        text-shadow:
+            0 0 8px #ffffaa,
+            0 0 20px #fffccd;
+        cursor: pointer;
+    }
+
+    .polaroid { 
+        position: absolute;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        width: 150px;
+        text-align: center;
+        transform: rotate(-5deg);
+    }
+
+    #foto1 {
+        top: 20%;
+        left: 9%;
+    }
+
+    #foto2 {
+        top: 15%;
+        right: 10%;
+        transform: rotate(5deg);
+    }
+
+    #linhaDeCoracao {
+        margin: 100px auto 1px;
+        position: relative;
+        top: 65%;
+        left: 10%;
+        width: 80%;
+        height: 200px;
+        pointer-events: none;
+    }
+
+    #Principal {
+        margin: 100px auto 50px;
+        padding: 30px;
+        max-width: 800px;
+        background-image: url('a.jpeg'); /* imagem dos girassóis de Van Gogh */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 20px;
+        border: 2px solid #ffdd55;
+        box-shadow:
+            0 0 10px rgba(255, 221, 85, 0.3),
+            0 0 20px rgba(255, 221, 85, 0.4);
+        backdrop-filter: brightness(0.5) blur(2px);
+        background-blend-mode: overlay;
+        color: #fffbe6;
+        font-family: 'Georgia', serif;
+        z-index: 10;
+        position: relative;
+    }
+
+    #Principal::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5); /* camada escura atrás do conteúdo */
+        border-radius: 20px;
+        z-index: -1;
+    }
+
+    #Principal h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #ffe066;
+        text-shadow: 0 0 5px #222, 0 0 10px #ffdd55;
+    }
+
+    #Principal p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: justify;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 15vh;
+        padding: 0 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 10px;
+    }
+
+    #PlayBtn {
+        top: 70px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #PlayBtn i {
+        font-size: 1rem;
+    }
+
+    .polaroid {
+        width: 120px;
+        padding: 8px;
+    }
+
+    #foto1, #foto2 {
+        position: static;
+        margin: 20px auto;
+        display: block;
+        transform: none !important;
+    }
+
+    #linhaDeCoracao {
+        width: 95%;
+        height: 150px;
+        left: 2.5%;
+    }
+
+    #Principal {
+        margin: 60px 10px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    #Principal h2 {
+        font-size: 2rem;
+    }
+
+    #Principal p {
+        font-size: 1rem;
+    }
+}
